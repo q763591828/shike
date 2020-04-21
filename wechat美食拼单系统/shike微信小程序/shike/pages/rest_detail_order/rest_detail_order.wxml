@@ -1,0 +1,52 @@
+<view class= "content">
+  餐厅信息
+  <view class="rest_info">
+    <view class="rest_item">餐馆名称</view>
+    <view class="rest_item">{{title}}</view>
+    <view class="rest_item">餐馆地址</view>
+    <view class="rest_item">{{address}}</view>
+    <view class="rest_item">电话号码</view>
+    <view class="rest_item">{{telephone}}</view>
+  </view>
+  拼单信息
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='content_data'>
+      <view class='ziduan'>拼单名称</view>
+      <input class='info' name="caiName"   placeholder='{{caiName}}' />
+    </view>
+    <view class='content_data'>
+      <view class='ziduan'>拼单价格</view>
+      <input class='info' name="price"   placeholder='{{price}}' />
+    </view>
+    <view class='content_data'>
+      <view class='ziduan'>总人数</view>
+      <input class='info' name="sum_number"   placeholder='{{sum_number}}' />
+    </view>
+    
+    <view class="section">
+      <view class="section__title">时间选择器</view>
+      <picker mode="time"  name="time"  value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+        <view class="picker">
+          当前选择: {{time}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <view class="section__title">日期选择器</view>
+      <picker mode="date" name="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          当前选择: {{date}}
+        </view>
+      </picker>
+    </view>
+    <!--
+      <view class="section btn-area">
+        <button formType="submit">提交</button>
+        <button formType="reset">重置</button>
+      </view>
+    -->
+    
+  </form>
+
+</view>

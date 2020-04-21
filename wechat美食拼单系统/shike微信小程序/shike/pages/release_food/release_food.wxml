@@ -1,0 +1,29 @@
+<import src="../../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+
+
+<view class='container'>
+  <image class="image_frame" src="{{imageUrl}}" mode="aspectFill">  
+  </image> 
+  <button  bindtap="choose">选择图片</button> 
+</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='content_data'>
+    <view class='ziduan'>食物名字：</view>
+    <input class='info' name="caiName"   placeholder="请输入食物名字" />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>食物价格:</view>
+    <input class='info' name="price"   placeholder='请输入价格' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>适合人数:</view>
+    <input class='info' name="properNumber"   placeholder='请输入适宜就餐的人数' />
+  </view>
+  <view class="content_data">
+    <button formType="submit" class="submit">提交</button>
+    <button formType="reset" class="submit">重置</button>
+  </view>
+  <button bindtap="rest_food" class="submit">查看已发布餐品</button>
+</form>

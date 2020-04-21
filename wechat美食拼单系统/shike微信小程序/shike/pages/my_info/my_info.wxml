@@ -1,0 +1,63 @@
+<view class="image_content">
+  <image class="image_frame" src="{{imageUrl}}" mode="aspectFill"  background-size = "cover">  
+  </image>  
+</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='content_data'>
+    <view class='ziduan'>用户名：</view>
+    <input class='info' name="userName"   placeholder='{{userInfo.userName}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>密码：</view>
+    <input class='info' name="password"  placeholder='{{userInfo.password}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>年龄：</view>
+    <input class='info' name="age"   placeholder='{{userInfo.age}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>性别：</view>
+    <input class='info' name="sex"   placeholder='{{userInfo.sex}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>电话号码：</view>
+    <input class='info' name="telephone"  placeholder='{{userInfo.telephone}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>邮箱：</view>
+    <input class='info' name="mailbox"  placeholder='{{userInfo.mailbox}}' />
+  </view>
+  <view class="content_data">
+    <button formType="submit" class="submit">提交</button>
+    <button formType="reset" class="submit">重置</button>
+  </view>
+</form>
+<view class="content_data">
+  <button  bindtap="logout" class="submit">注销</button>
+  <button  bindtap="upload" class="submit">上传头像</button>
+</view>
+<view class="page__bd">
+  <modal 
+    title="确认" 
+    confirm-text="确定" 
+    cancel-text="取消" 
+    hidden="{{modalHidden}}" 
+    mask bindconfirm="confirm_one" 
+    bindcancel="cancel_one">
+      确认提交么？
+  </modal>
+
+  <modal 
+    class="modal" 
+    hidden="{{modalHidden2}}" 
+    no-cancel bindconfirm="modalChange2" 
+    bindcancel="modalChange2">
+      <view> 提示 </view>
+      <view> 清空成功 </view>
+  </modal>
+</view>
+
+
+
+  

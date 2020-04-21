@@ -1,0 +1,44 @@
+<import src="/wxSearch/wxSearch.wxml"/>
+
+<view class="wxSearch-section">
+  <view class="wxSearch-pancel">
+    <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索" />
+    <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+  </view>
+</view>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+
+<view class ="container">
+  <view class="blank"></view>
+  <view class="swiper_container">
+    <swiper class="swiper" indicator-dots="true"
+      autoplay="true" interval="3000" duration="1000">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="blank"></view>
+  
+</view>
+
+<view class="selection">
+  <view class="head">
+    <text>精品推荐</text>
+    <text class="text_all">全部精品</text>
+  </view>
+
+  <view class="content" >
+    <view class="content_item" wx:for="{{foodsInfo}}">
+      <image class="img" src="{{item.imgId}}" mode="aspectFill" ></image>
+      <view class="cai_info">菜名： {{item.caiName}}</view>
+      <view class="cai_info">价格： {{item.price}}</view>
+      <view class="cai_info">适合人数： {{item.properNumber}}</view>
+      <button class="choose"   data-cai_id='{{item.caiId}}'  data-caiName='{{item.caiName}}'     
+      data-price='{{item.price}}' data-properNumber='{{item.properNumber}}'bindtap='delete_button'>删除</button>
+    </view>
+    
+  </view>
+</view>

@@ -1,0 +1,66 @@
+<view class="image_content">
+  <image class="image_frame" src="{{imageUrl}}" mode="aspectFill"  background-size = "cover">  
+  </image>  
+</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='content_data'>
+    <view class='ziduan'>餐馆id：</view>
+    <input class='info' name="restId"   placeholder='{{restInfo.restId}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>餐馆密码：</view>
+    <input class='info' name="password"  placeholder='{{restInfo.password}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>餐馆名：</view>
+    <input class='info' name="title"   placeholder='{{restInfo.title}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>地址：</view>
+    <input class='info' name="address"   placeholder='{{restInfo.address}}' />
+  </view>
+  <view class='content_data'>
+    <view class='ziduan'>电话号码：</view>
+    <input class='info' name="telephone"  placeholder='{{restInfo.telephone}}' />
+  </view>
+  
+  <view class= "content_data">
+   
+      <button formType="submit" class = "submit">提交</button>
+      <button formType="reset" class = "submit">重置</button>
+
+  </view>
+  
+</form>
+
+<view class= "content_data">
+  <button  bindtap="logout" class = "submit">注销</button>
+  <button  bindtap="upload" class = "submit">上传头像</button>
+</view>
+
+<view class="page__bd">
+  <modal 
+    title="确认" 
+    confirm-text="确定" 
+    cancel-text="取消" 
+    hidden="{{modalHidden}}" 
+    mask bindconfirm="confirm_one" 
+    bindcancel="cancel_one">
+      确认提交么？
+  </modal>
+
+  <modal 
+    class="modal" 
+    hidden="{{modalHidden2}}" 
+    no-cancel bindconfirm="modalChange2" 
+    bindcancel="modalChange2">
+      <view> 提示 </view>
+      <view> 清空成功 </view>
+  </modal>
+</view>
+
+
+
+<import src="../../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>

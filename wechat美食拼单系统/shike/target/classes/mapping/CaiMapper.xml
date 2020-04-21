@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.shike.dao.CaiMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.shike.pojo.Cai" >
+    <id column="cai_id" property="caiId" jdbcType="INTEGER" />
+    <result column="cai_name" property="caiName" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="INTEGER" />
+    <result column="rest_id" property="restId" jdbcType="INTEGER" />
+    <result column="img_id" property="imgId" jdbcType="VARCHAR" />
+    <result column="proper_number" property="properNumber" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cai_id, cai_name, price
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_cai
+    where cai_id = #{caiId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_cai
+    where cai_id = #{caiId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="caiId" parameterType="com.cn.shike.pojo.Cai" >
+    insert into t_cai (cai_id, cai_name, price
+      )
+    values (#{caiId,jdbcType=INTEGER}, #{caiName,jdbcType=VARCHAR}, #{price,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.shike.pojo.Cai" >
+    insert into t_cai
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="caiId != null" >
+        cai_id,
+      </if>
+      <if test="caiName != null" >
+        cai_name,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="caiId != null" >
+        #{caiId,jdbcType=INTEGER},
+      </if>
+      <if test="caiName != null" >
+        #{caiName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.shike.pojo.Cai" >
+    update t_cai
+    <set >
+      <if test="caiName != null" >
+        cai_name = #{caiName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cai_id = #{caiId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.shike.pojo.Cai" >
+    update t_cai
+    set cai_name = #{caiName,jdbcType=VARCHAR},
+      price = #{price,jdbcType=INTEGER}
+    where cai_id = #{caiId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectCaiInfo" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select* from t_cai where cai_id in(select cai_id from t_order where order_id = #{arg0})
+  </select>
+
+  <update id="updateImg" useGeneratedKeys="true" keyProperty="userId" parameterType="com.cn.shike.pojo.Cai" >
+    UPDATE t_cai
+    set img_id = #{imgId,jdbcType=VARCHAR}
+    where cai_id =#{caiId,jdbcType=INTEGER}
+  </update>
+
+  <insert id="insertFood" useGeneratedKeys="true" keyProperty="caiId" parameterType="com.cn.shike.pojo.Cai" >
+    insert into t_cai (cai_id, cai_name, price, proper_number
+    )
+    values (#{caiId,jdbcType=INTEGER}, #{caiName,jdbcType=VARCHAR}, #{price,jdbcType=INTEGER},#{properNumber,jdbcType=INTEGER}
+    )
+  </insert>
+
+
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="int">
+  SELECT * from t_cai where rest_id = #{param2} AND 1=1   ORDER BY click desc LIMIT  #{param1}
+</select>
+
+  <select id="getSearchFood" resultMap="BaseResultMap" >
+    SELECT * from t_cai where rest_id = #{0} AND 1=1 AND cai_name like concat( '%', #{1},'%');
+  </select>
+
+  <update id="updateClick" parameterType="int" >
+    update t_cai set click=click+1 where cai_id=#{caiId,jdbcType=INTEGER}
+  </update>
+</mapper>

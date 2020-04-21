@@ -1,0 +1,76 @@
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+.blank{
+  display: flex;
+  height: 150px;
+  width: 18%
+}
+
+.swiper_container{
+  display: flex;
+  width: 100%;
+  height:100%;
+}
+
+.swiper{
+  height: 150px;
+  width:288px
+}
+
+.slide-image{
+  height: 150px;
+  width:288px
+}
+
+.head{
+  border-left-width: 2px;
+  border-left-style: solid;  
+  border-left-color: limegreen;
+  display: flex;
+  justify-content: space-between
+}
+
+.text_all{
+  color: greenyellow;
+  font-size: 15px
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+
+.content_item{
+  display: flex;
+  flex-direction: column;
+  height: 460rpx;
+  width: 47%;
+  background-color: white;
+  margin: 2px;
+}
+
+.img{
+  display: flex;
+  height: 200rpx;
+  width: 100%;
+}
+
+.cai_info{
+  display: flex;
+  height: 60rpx;
+  width: 100%;
+}
+
+.choose{
+  display: flex;
+  height: 80rpx;
+  width: 100%;
+  align-items: center;
+  background-color: yellow;
+}

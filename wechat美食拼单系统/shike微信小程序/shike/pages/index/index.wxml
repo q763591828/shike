@@ -1,0 +1,66 @@
+<view class="mcontainer">
+    <view class="item">
+        <image src="/img/logo.jpg" class="image"/>
+    </view>
+
+    <view class="item">
+       <view class="login-item">
+       	    <view class="login-item-info">用户名</view>
+            <view><input bindinput="usernameInput" placeholder="请输入用户名"  /></view>
+       </view>
+       <view class="login-item">
+            <view class="login-item-info">密码</view>
+            <view class="login-pwd">
+            
+            <input style="flex-grow:1" password="true"  bindinput="passwordInput" placeholder="请输入密码" /> 
+            <text> 忘记密码 </text>
+            
+            </view>
+       </view>
+       
+      <view class="content">
+        <view class="content-item1">
+          年龄:
+        </view>
+        <view class="content-item2">
+          <slider name="age" show-value bindchange='ageInput' ></slider>
+        </view>
+      </view>
+       <view class="content">
+        <view class="content-item1">
+          性别:
+        </view>
+        <view class="content-item2">
+          <radio-group name="gender" bindchange="sexInput">
+                  <label><radio value="男"/>男</label>
+                  <label><radio value="女"/>女</label>
+                </radio-group>
+        </view>
+      </view>
+      
+       <view class="login-item">
+       	    <view class="login-item-info">电话号码</view>
+            <view><input bindinput="telephoneInput" placeholder="请输入电话号码" /></view>
+       </view>
+       <view class="login-item">
+       	    <view class="login-item-info">邮箱</view>
+            <view><input bindinput="mailboxInput" placeholder="请输入邮箱" /></view>
+       </view>
+       <view class="login-item bottom">
+            <button class="login-btn" bindtap="loginBtnClick">注册</button>
+       </view>
+        <view class="login-item bottom">
+            <button class="login-btn" bindtap="login">返回用户登录页面</button>
+       </view>
+    </view>
+
+
+    <view class="item bottom-info">
+       <view> 没有账户? <text> 注册 </text> </view>
+       <view class="wechat-icon">
+            <image src="/img/wechat.png"  />
+       </view>
+    </view>
+
+
+</view>

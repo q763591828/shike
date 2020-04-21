@@ -1,0 +1,39 @@
+<view class="mcontainer">
+    <view class="item">
+        <image src="/img/logo.jpg" class="image"/>
+    </view>
+
+    <view class="item">
+       <view class="login-item">
+       	    <view class="login-item-info">餐馆id</view>
+            <view><input bindinput="usernameInput"  placeholder="请输入餐馆id" /></view>
+       </view>
+       <view class="login-item">
+            <view class="login-item-info">密码</view>
+            <view class="login-pwd">
+            
+            <input style="flex-grow:1" password="true"  bindinput="passwordInput"  placeholder="请输入密码" /> 
+            <text> 忘记密码 </text>
+            
+            </view>
+       </view>
+       
+       <view class="login-item bottom">
+            <button class="login-btn" bindtap="loginBtnClick">登录</button>
+       </view>
+
+       <view class="login-item bottom">
+            <button class="login-btn" bindtap="login">用户登录</button>
+       </view>
+    </view>
+
+
+    <view class="item bottom-info">
+       
+       <view class="wechat-icon">
+            <image src="/img/wechat.png"  />
+       </view>
+    </view>
+
+
+</view>

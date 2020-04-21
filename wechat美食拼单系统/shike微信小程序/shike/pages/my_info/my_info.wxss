@@ -1,0 +1,62 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  background-color:gray ;
+  height: 400px;
+  width:100%
+}
+
+.image_content{
+  display: flex;
+  height: 150px;
+  width:100%
+}
+
+.content_data{
+  display: flex;
+  height: 50px;
+  width:98%;
+  background-color:white;
+  margin: 3px;
+  flex-direction: row;
+}
+
+.ziduan{
+  display: flex;
+  height: 45px;
+  width:30%;
+  text-align: center;
+  line-height: 65px;
+}
+
+.info{
+  display: flex;
+  height: 65px;
+  width:70%;
+  text-align: center;
+  line-height: 65px;
+}
+
+.image_frame{
+  display: flex;
+  width: 250rpx;
+  height: 250rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  justify-content: center
+}
+
+.image_content{
+  display: flex;
+  justify-content: center
+}
+
+.submit{
+  display: flex;
+  height: 50px;
+  width:50%;
+  text-align: center;
+  line-height: 50px;
+  background-color: yellow;
+  align-items: center;
+}

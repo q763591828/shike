@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/choose_food/choose_food",
+    "pages/release_food/release_food",
+    "pages/rest_login/rest_login",
+    "pages/my_info/my_info",
+    "pages/search/search",
+    "pages/rest_order/rest_order",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/suggestion/suggestion",
+    "pages/regeocoding/regeocoding",
+    "pages/weather/weather",
+    "pages/create_order/create_order",
+    "pages/my_order/my_order",
+    "pages/my_rest_order/my_rest_order",
+    "pages/rest_censor/rest_censor",
+    "pages/detail_order/detail_order",
+    "pages/rest_detail_order/rest_detail_order",
+    "pages/rest_info/rest_info",
+    "pages/rest_food/rest_food"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f4de3b",
+    "navigationBarTitleText": "食客",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#4db900",
+    "backgroundColor": "#fbfbfd",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/search/search",
+        "text": "查询",
+        "iconPath": "/img/search.png",
+        "selectedIconPath": "/img/search1.png"
+      },
+      {
+        "pagePath": "pages/rest_order/rest_order",
+        "text": "餐馆拼单",
+        "iconPath": "/img/message.png",
+        "selectedIconPath": "/img/message_on.png"
+      },
+      {
+        "pagePath": "pages/my_order/my_order",
+        "text": "我的订单",
+        "iconPath": "/img/buy.png",
+        "selectedIconPath": "/img/buy_on.png"
+      },
+      {
+        "pagePath": "pages/my_info/my_info",
+        "text": "个人信息",
+        "iconPath": "/img/home.png",
+        "selectedIconPath": "/img/home_on.png"
+      },
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "天气",
+        "iconPath": "/img/weather.jpg",
+        "selectedIconPath": "/img/weather.jpg"
+      }
+    ]
+  }
+}

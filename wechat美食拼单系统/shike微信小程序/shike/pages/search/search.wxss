@@ -1,0 +1,16 @@
+.map_container{
+    height: 450px;
+    width: 100%;
+}
+
+.map {
+    height: 100%;
+    width: 100%;
+}
+
+.place_info {
+    padding: 0 5px;
+}
+
+.add{position: fixed;bottom: 100px;right:60px;}
+.add image{width: 80rpx;height: 80rpx;}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cn.shike.dao.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.cn.shike.dao.OrderMapper" >
+    <id column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="cai_id" property="caiId" jdbcType="INTEGER" />
+    <result column="sum_number" property="sumNumber" jdbcType="INTEGER" />
+    <result column="now_number" property="nowNumber" jdbcType="INTEGER" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="order_root" property="orderRoot" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    order_id, date, cai_id, sum_number, now_number, message
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from t_order where order_id = #{orderId,jdbcType=INTEGER}
+</select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_order
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert"  useGeneratedKeys="true" keyProperty="orderId"  parameterType="com.cn.shike.dao.OrderMapper" >
+    insert into t_order (order_id, date, cai_id, 
+      sum_number, now_number, message,order_root
+      )
+    values (#{orderId,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}, #{caiId,jdbcType=INTEGER}, 
+      #{sumNumber,jdbcType=INTEGER}, #{nowNumber,jdbcType=INTEGER}, #{message,jdbcType=VARCHAR},#{orderRoot,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.shike.dao.OrderMapper" >
+    insert into t_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="caiId != null" >
+        cai_id,
+      </if>
+      <if test="sumNumber != null" >
+        sum_number,
+      </if>
+      <if test="nowNumber != null" >
+        now_number,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="caiId != null" >
+        #{caiId,jdbcType=INTEGER},
+      </if>
+      <if test="sumNumber != null" >
+        #{sumNumber,jdbcType=INTEGER},
+      </if>
+      <if test="nowNumber != null" >
+        #{nowNumber,jdbcType=INTEGER},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.shike.dao.OrderMapper" >
+    update t_order
+    <set >
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="caiId != null" >
+        cai_id = #{caiId,jdbcType=INTEGER},
+      </if>
+      <if test="sumNumber != null" >
+        sum_number = #{sumNumber,jdbcType=INTEGER},
+      </if>
+      <if test="nowNumber != null" >
+        now_number = #{nowNumber,jdbcType=INTEGER},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.shike.dao.OrderMapper" >
+    update t_order
+    set date = #{date,jdbcType=VARCHAR},
+      cai_id = #{caiId,jdbcType=INTEGER},
+      sum_number = #{sumNumber,jdbcType=INTEGER},
+      now_number = #{nowNumber,jdbcType=INTEGER},
+      message = #{message,jdbcType=VARCHAR}
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateOrderRoot" parameterType="com.cn.shike.dao.OrderMapper" >
+    UPDATE t_order set order_root =1 where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+
+  <select id="findByPrimaryKey" resultType="map" parameterType="int" >
+    select * from t_order where order_id=#{arg0}
+  </select>
+
+
+  <update id="myUpdateByPrimaryKey" parameterType="com.cn.shike.dao.OrderMapper" >
+    UPDATE t_order set sum_number = #{sumNumber,jdbcType=INTEGER}, date =#{date,jdbcType=VARCHAR} where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,111 @@
+@import "/wxSearch/wxSearch.wxss";
+.content{
+  display: flex;
+  flex-direction: column;
+  background-color:black;
+}
+
+.content_item{
+  display: flex;
+  height: 150px;
+  width: 100%;
+  background-color: gainsboro;
+  margin: 0.5px;
+  flex-direction: row;
+}
+
+.content_orderId_orderDate{
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width:20%;
+  background-color: gainsboro;
+  margin: 0.5px;
+}
+
+.content_orderId{
+  display: flex;
+  height: 25px;
+  width:99%;
+  margin: 0.5px;
+  background-color: white;
+  font-size: small;
+  font-weight: 500;
+  color:black
+}
+
+.content_orderId_info{
+display: flex;
+  height: 55px;
+  width:99%;
+  margin: 0.5px;
+  background-color: white;
+  font-size: small;
+  font-weight: 500;
+  color:black
+}
+
+.content_orderDate{
+  display: flex;
+  height: 25px;
+  width:99%;
+  margin: 0.5px;
+  background-color: white;
+  font-family:"微软雅黑";
+  font-size: small;
+  font-weight: 500;
+  color:black
+}
+
+.content_orderId_date{
+display: flex;
+  height: 55px;
+  width:99%;
+  margin: 0.5px;
+  background-color: white;
+  font-size: small;
+  font-weight: 500;
+  color:black
+}
+
+.content_info{
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width:60%;
+  background-color: gainsboro;
+  margin: 0.5px;
+}
+
+.content_info_box{
+  display: flex;
+  height: 36.7px;
+  width:99%;
+  margin: 0.5px;
+  background-color: white;
+}
+
+.content_add{
+  display: flex;  
+  height: 150px;
+  width:20%;
+  background-color: white;
+  text-align: center;
+  line-height: 150px;
+  color: black;
+  flex-direction: column;
+}
+
+.content_info_num{
+  display: flex;
+  width:50%;
+  font-size: small;
+}
+
+.delete_order{
+  display: flex;  
+  height: 75px;
+  background-color: yellow;
+  text-align: center;
+  line-height: 75px;
+}
